@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wanye Clips — Short-Form Clipping for Creators</title>
 <meta name="description" content="Long videos in. Scroll-stopping Shorts out. Shu Wanye turns podcasts, streams, talks and long YouTube videos into vertical clips built for TikTok, Reels and Shorts. 1 clip $10 · 5 clips $40 · 10 clips $90.">
+<meta name="theme-color" content="#0b0b0f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wanye Clips — Short-Form Clipping for Creators">
+<meta property="og:description" content="Long videos in. Scroll-stopping Shorts out. Hook-first vertical clips, captioned and ready to post. 1 clip $10 · 5 for $40 · 10 for $90.">
+<meta property="og:url" content="https://harryyt01.github.io/wanye-clips/">
+<meta property="og:image" content="https://harryyt01.github.io/wanye-clips/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wanye Clips — Short-Form Clipping for Creators">
+<meta name="twitter:description" content="Long videos in. Scroll-stopping Shorts out. 1 clip $10 · 5 for $40 · 10 for $90.">
+<meta name="twitter:image" content="https://harryyt01.github.io/wanye-clips/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffb020'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='900' text-anchor='middle' fill='%23141005'%3EW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,15 +40,16 @@ section{padding:72px 0}
 .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
 .btn.ghost:hover{box-shadow:none;border-color:var(--accent)}
 /* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(11,11,15,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:50;background:rgba(11,11,15,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-weight:900;font-size:1.15rem;text-decoration:none;letter-spacing:-.02em}
+.logo{font-weight:900;font-size:1.15rem;text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:var(--accent);color:#141005;display:inline-flex;align-items:center;justify-content:center;font-size:1rem}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;gap:26px;font-size:.92rem;color:var(--muted)}
 .nav-links a{text-decoration:none}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{font-size:.9rem;padding:9px 18px}
-@media(max-width:720px){.nav-links{display:none}}
+@media(max-width:760px){.nav-links{display:none}}
 /* hero */
 .hero{padding:88px 0 64px;background:radial-gradient(900px 420px at 70% -10%,rgba(255,92,57,.22),transparent 60%),radial-gradient(700px 380px at 10% 0%,rgba(255,176,32,.16),transparent 55%)}
 .hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:900}
@@ -48,24 +60,48 @@ nav{position:sticky;top:0;z-index:50;background:rgba(11,11,15,.85);backdrop-filt
 .hero-meta b{color:var(--text)}
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;color:var(--muted);font-weight:600;letter-spacing:.06em;font-size:.85rem;text-align:center}
 .strip span{margin:0 10px;white-space:nowrap}
-/* samples */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-@media(max-width:820px){.grid3{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+/* about */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.about-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.about-card h3{font-size:1.1rem;margin-bottom:10px}
+.about-card p{color:var(--muted);font-size:.95rem}
+.about-card p+p{margin-top:10px}
+/* gallery */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.filter{background:var(--surface);border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
+.filter:hover{color:var(--text);border-color:var(--accent)}
+.filter.active{background:var(--accent);color:#141005;border-color:var(--accent)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-4px);border-color:#3a3a4d}
+.card-media{position:relative;background:#000}
+.card-media video,.card-media iframe{display:block;width:100%;aspect-ratio:9/16;max-height:420px;margin:0 auto;border:0;background:#000}
 .card-thumb{aspect-ratio:9/12;max-height:300px;background:linear-gradient(160deg,#23233a,#101018);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;position:relative}
 .card-thumb .dur{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.65);padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:700}
 .card-thumb .cat{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .card-thumb .t{font-size:1.35rem;font-weight:800;line-height:1.2;margin-top:6px}
 .card-body{padding:20px}
+.card-body h3{font-size:1.08rem;margin-bottom:6px}
 .card-body p{color:var(--muted);font-size:.94rem}
 .card-body .row{margin:10px 0;color:var(--muted);font-size:.92rem}
 .card-body .row b{color:var(--text)}
-.tag{display:inline-block;margin-top:12px;background:var(--surface2);border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-size:.8rem;color:var(--muted)}
-/* features */
-.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-@media(max-width:820px){.feat{grid-template-columns:1fr}}
-.feat .card-body h3{font-size:1.05rem;margin-bottom:8px}
+.tag{display:inline-block;margin:5px 6px 0 0;background:var(--surface2);border:1px solid var(--line);padding:5px 12px;border-radius:999px;font-size:.8rem;color:var(--muted)}
+.proof{font-size:.85rem;color:var(--muted);margin-top:12px}
+.proof a{color:var(--accent);text-decoration:none}
+/* features / services */
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+@media(max-width:720px){.feat{grid-template-columns:1fr}}
+.feat .card-body h3{font-size:1.08rem;margin-bottom:8px}
 .feat .num{color:var(--accent);font-weight:900;font-size:.85rem;letter-spacing:.1em}
+.feat .gets{margin-top:12px;font-size:.92rem;color:var(--muted)}
+.feat .gets b{color:var(--text)}
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+@media(max-width:820px){.why{grid-template-columns:1fr}}
+.why .card-body h3{font-size:1.02rem;margin-bottom:8px}
 /* pricing */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;align-items:stretch}
 @media(max-width:820px){.price-grid{grid-template-columns:1fr}}
@@ -109,6 +145,9 @@ form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--a
 /* footer */
 footer{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--muted);font-size:.92rem}
 footer a{color:var(--text)}
+.socials{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0}
+.socials a{color:var(--text);text-decoration:none;border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:.88rem}
+.socials a:hover{border-color:var(--accent)}
 .cta-band{background:linear-gradient(120deg,#1d1607,#241105);border:1px solid #3a2a12;border-radius:20px;padding:44px 32px;text-align:center}
 .cta-band h2{margin-bottom:8px}
 .cta-band p{color:var(--muted);margin-bottom:24px}
@@ -116,11 +155,11 @@ footer a{color:var(--text)}
 </head>
 <body>
 <nav><div class="wrap nav-in">
-  <a class="logo" href="#">Wanye<span> Clips</span></a>
+  <a class="logo" href="#"><span class="mark">W</span>Wanye<span>&nbsp;Clips</span></a>
   <div class="nav-links">
-    <a href="#samples">Samples</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#process">Process</a><a href="#faq">FAQ</a>
+    <a href="#work">Work</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#process">Process</a><a href="#faq">FAQ</a>
   </div>
-  <a class="btn nav-cta" href="#book">Book a clip</a>
+  <a class="btn nav-cta" href="#book">Hire me</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
@@ -129,7 +168,7 @@ footer a{color:var(--text)}
   <p>I turn your podcasts, streams, talks and long YouTube videos into vertical clips built for TikTok, Reels and Shorts — hooked in the first 3 seconds, captioned, and ready to post. You record once. I do the cutting.</p>
   <div class="hero-cta">
     <a class="btn" href="#book">Start with 1 clip — $10</a>
-    <a class="btn ghost" href="#pricing">See packages</a>
+    <a class="btn ghost" href="#work">Watch the work</a>
   </div>
   <div class="hero-meta">
     <span><b>9:16 · 1080×1920</b> vertical</span>
@@ -143,55 +182,137 @@ footer a{color:var(--text)}
   <span>PODCASTS</span>✦<span>LIVESTREAMS</span>✦<span>YOUTUBE VIDEOS</span>✦<span>WEBINARS</span>✦<span>INTERVIEWS</span>✦<span>GAMING</span>✦<span>COACHING CALLS</span>
 </div></div>
 
-<section id="samples"><div class="wrap">
-  <p class="kicker">Samples</p>
-  <h2>How a clip is built</h2>
-  <p class="lead">Three sample breakdowns showing the exact edit structure applied to every clip — hook, beat pattern and ending — so you know what you're buying before you pay.</p>
-  <div class="grid3">
-    <article class="card">
+<section id="about"><div class="wrap"><div class="about-grid">
+  <div>
+    <p class="kicker">About</p>
+    <h2>One editor. One job: make your long videos work on a phone screen.</h2>
+    <p class="lead" style="margin-top:12px">I'm Shu Wanye, a short-form editor. I watch long videos the way a scroller does — hunting for the one line, the one reaction, the one moment worth stopping for — then I rebuild it as a vertical clip: hook first, captions on, no dead air.</p>
+    <p class="lead" style="margin-top:12px">I also run my own storytelling channel, <a href="https://youtube.com/@zunixaura" target="_blank" rel="noopener">@zunixaura</a>, where I produce animated Shorts end to end — scripting, voices, sound and edit — so the craft I sell is the craft I use every week.</p>
+  </div>
+  <div class="about-card">
+    <h3>What I do, in one line</h3>
+    <p>Your next 10 posts are already recorded. They're sitting inside your long videos — I find them, cut them, caption them, and hand them back ready to upload.</p>
+    <p>Available to creators in the US, UK, Canada, Australia &amp; Europe. No retainer, no lock-in — start with a single $10 clip.</p>
+  </div>
+</div></div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Featured work</p>
+  <h2>Watch the work</h2>
+  <p class="lead">Real clips, playable right here. Every video below is work I actually edited — no stock footage, no borrowed reels.</p>
+  <div class="filters" id="filters">
+    <button class="filter active" data-filter="all">All work</button>
+    <button class="filter" data-filter="shorts">YouTube Shorts</button>
+    <button class="filter" data-filter="promo">Promotional</button>
+    <button class="filter" data-filter="structure">Sample structures</button>
+  </div>
+  <div class="grid3" id="gallery">
+
+    <article class="card" data-cat="shorts">
+      <div class="card-media"><iframe src="https://www.youtube.com/embed/mlt5L3eRFY8" title="She Cheated on Him… So He Became a TRILLIONAIRE in GTA 6" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="card-body">
+        <h3>She Cheated on Him… So He Became a TRILLIONAIRE in GTA 6</h3>
+        <p>60-second anime-style story Short from my own channel @zunixaura: a breakup, a net-worth counter climbing with every mission, and a payoff line that lands the loop. Built end to end — script, character voices, SFX, music and edit.</p>
+        <div class="row"><b>Techniques:</b> character-consistent scenes · dialogue voiceover · sound design · on-screen wealth counter · loopable ending</div>
+        <span class="tag">YouTube Shorts</span><span class="tag">Cinematic storytelling</span><span class="tag">60s</span>
+        <p class="proof">Published on <a href="https://youtube.com/@zunixaura" target="_blank" rel="noopener">@zunixaura</a> · 17 Nov 2026</p>
+      </div>
+    </article>
+
+    <article class="card" data-cat="promo">
+      <div class="card-media"><video src="samples/miami-crime-rp-clip.mp4" poster="samples/miami-crime-rp-thumb.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="card-body">
+        <h3>Miami Crime RP — server promo clip</h3>
+        <p>36-second vertical promo for a Roblox roleplay server: gameplay re-cropped full-frame to 9:16, game audio kept, message carried by burned-in subtitles, Discord link on screen throughout and a clear call to action at the end.</p>
+        <div class="row"><b>Techniques:</b> full-frame 9:16 re-crop · burned-in subtitles · CTA placement · loudness-balanced mix</div>
+        <span class="tag">Promotional</span><span class="tag">Gaming</span><span class="tag">36s</span>
+      </div>
+    </article>
+
+    <article class="card" data-cat="promo">
+      <div class="card-media"><video src="samples/make-fun-clip-v1.mp4" poster="samples/make-fun-thumb.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="card-body">
+        <h3>make.fun — platform promo clip</h3>
+        <p>33-second promo cut from three ads into one story: hook in the first 3 seconds, logo and #ad burned in, “free to enter” up front, and a call to action to visit make.fun. No invented amounts, no banned claims.</p>
+        <div class="row"><b>Techniques:</b> multi-source edit · hook-first structure · burned-in branding · clear CTA</div>
+        <span class="tag">Promotional</span><span class="tag">33s</span>
+      </div>
+    </article>
+
+    <article class="card" data-cat="promo">
+      <div class="card-media"><video src="samples/forgegui-clip-v2.mp4" poster="samples/forgegui-thumb.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="card-body">
+        <h3>ForgeGUI — app showcase reel</h3>
+        <p>Vertical showcase reel for a Roblox GUI app: app footage reframed for phones, clean captions, and a fast-cut tour of what the app does — built to be watched muted and still understood.</p>
+        <div class="row"><b>Techniques:</b> app-footage reframe · captioned walkthrough · fast cuts every 2–4s</div>
+        <span class="tag">Promotional</span><span class="tag">App showcase</span>
+      </div>
+    </article>
+
+    <article class="card" data-cat="structure">
       <div class="card-thumb"><span class="dur">38s</span><span class="cat">Podcast</span><div class="t">“Nobody tells you this about money…”</div></div>
       <div class="card-body">
-        <p>Podcast insight → 38s Short. Source: 52-minute interview.</p>
+        <h3>Podcast insight → 38s Short</h3>
+        <p>Source: 52-minute interview.</p>
         <div class="row"><b>Hook (0–3s):</b> the guest's most contrarian line, cold open.</div>
         <div class="row"><b>Middle:</b> one idea only, cut every 2–4s, captions carry the argument muted.</div>
         <div class="row"><b>End:</b> payoff line + 0.5s loop-back to the hook so it replays cleanly.</div>
-        <span class="tag">Best for: business, finance &amp; self-improvement podcasts</span>
+        <span class="tag">Sample structure</span><span class="tag">Podcast editing</span>
+        <p class="proof">Best for: business, finance &amp; self-improvement podcasts</p>
       </div>
     </article>
-    <article class="card">
+
+    <article class="card" data-cat="structure">
       <div class="card-thumb"><span class="dur">29s</span><span class="cat">Gaming / Stream</span><div class="t">He clutched it with 1 HP left</div></div>
       <div class="card-body">
-        <p>Stream moment → 29s Short. Source: 3-hour VOD.</p>
+        <h3>Stream moment → 29s Short</h3>
+        <p>Source: 3-hour VOD.</p>
         <div class="row"><b>Hook:</b> the final 2 seconds of the play, teased first.</div>
         <div class="row"><b>Middle:</b> rewind to the setup at 1.1× speed, streamer facecam enlarged on the reaction.</div>
         <div class="row"><b>End:</b> reaction held — the reaction is the ending.</div>
-        <span class="tag">Best for: gaming, sports &amp; reaction streams</span>
+        <span class="tag">Sample structure</span><span class="tag">Gaming</span>
+        <p class="proof">Best for: gaming, sports &amp; reaction streams</p>
       </div>
     </article>
-    <article class="card">
+
+    <article class="card" data-cat="structure">
       <div class="card-thumb"><span class="dur">44s</span><span class="cat">Talk / Coach</span><div class="t">The 10-second rule</div></div>
       <div class="card-body">
-        <p>Talk / lesson → 44s Short. Source: 18-minute talk.</p>
+        <h3>Talk / lesson → 44s Short</h3>
+        <p>Source: 18-minute talk.</p>
         <div class="row"><b>Hook:</b> the rule stated as a claim, not a topic (“Do this for 10 seconds…”).</div>
         <div class="row"><b>Middle:</b> one example, on-screen caption emphasis on the numbers.</div>
         <div class="row"><b>End:</b> direct instruction the viewer can do today — saves and shares come from this line.</div>
-        <span class="tag">Best for: coaches, teachers &amp; creators who teach</span>
+        <span class="tag">Sample structure</span><span class="tag">Coaching</span>
+        <p class="proof">Best for: coaches, teachers &amp; creators who teach</p>
       </div>
     </article>
+
   </div>
 </div></section>
 
 <section id="services" style="padding-top:0"><div class="wrap">
   <p class="kicker">Services</p>
-  <h2>What every clip includes</h2>
-  <p class="lead">Not just cut. Rebuilt for vertical. A clip is not a crop — every deliverable is re-edited for a phone screen and a 3-second attention window.</p>
+  <h2>What I can do for your channel</h2>
+  <p class="lead">Four services, one standard: every clip is hook-first, captioned, reframed for vertical, and watched end-to-end before it reaches you.</p>
   <div class="feat">
-    <div class="card"><div class="card-body"><div class="num">01</div><h3>Hook-first edit</h3><p>The strongest line moves to second 0–3. No intros, no “hey guys”, no dead air. If it doesn't earn the next second, it's cut.</p></div></div>
-    <div class="card"><div class="card-body"><div class="num">02</div><h3>Burned-in captions, styled to you</h3><p>Word-by-word captions in your colours, readable muted — because most Shorts are watched on silent first.</p></div></div>
-    <div class="card"><div class="card-body"><div class="num">03</div><h3>Reframed, not letterboxed</h3><p>Face-tracked 9:16 framing, 1080×1920, no black bars, no cut-off faces. Speaker stays centred when they move.</p></div></div>
-    <div class="card"><div class="card-body"><div class="num">04</div><h3>Sound that holds attention</h3><p>Cleaned voice, levelled loudness, subtle music and whoosh / pop SFX on cuts — never louder than the voice.</p></div></div>
-    <div class="card"><div class="card-body"><div class="num">05</div><h3>Title + caption + hashtags</h3><p>Each clip ships with a post-ready title, caption and 5–8 hashtags for TikTok, Reels and Shorts. You just upload.</p></div></div>
-    <div class="card"><div class="card-body"><div class="num">06</div><h3>One revision included</h3><p>Wrong moment, caption typo, music too loud? One round of fixes per clip is included in every package.</p></div></div>
+    <div class="card"><div class="card-body"><div class="num">01</div><h3>Short-form clipping</h3><p>Your long videos turned into TikTok / Reels / Shorts. I find the moments, cut them hook-first, caption them, and deliver post-ready MP4s with titles and hashtags.</p><p class="gets"><b>You get:</b> vertical MP4s · captions · title, caption &amp; 5–8 hashtags per clip · suggested posting order</p></div></div>
+    <div class="card"><div class="card-body"><div class="num">02</div><h3>Podcast → Shorts</h3><p>One interview becomes 5–10 clips: the contrarian take, the story, the reveal. One idea per clip, captions carrying the argument for muted viewers.</p><p class="gets"><b>You get:</b> clip list confirmed before cutting · one idea per clip · captions checked word-by-word</p></div></div>
+    <div class="card"><div class="card-body"><div class="num">03</div><h3>Stream &amp; VOD clips</h3><p>Hours of stream or VOD scanned for the plays, reactions and moments worth clipping — teased first, then rewound, with the reaction held as the ending.</p><p class="gets"><b>You get:</b> moment scan of the full VOD · facecam enlarged on reactions · 24–48h turnaround</p></div></div>
+    <div class="card"><div class="card-body"><div class="num">04</div><h3>Promo &amp; app reels</h3><p>Short promotional reels for a product, server or app: hook in 3 seconds, branding burned in, message clear with the sound off, CTA at the end.</p><p class="gets"><b>You get:</b> 20–45s vertical reel · burned-in logo &amp; CTA · muted-viewing proofed</p></div></div>
+  </div>
+</div></section>
+
+<section id="why" style="padding-top:0"><div class="wrap">
+  <p class="kicker">Why Wanye Clips</p>
+  <h2>Why creators hire me</h2>
+  <div class="why">
+    <div class="card"><div class="card-body"><h3>Hook first, always</h3><p>The strongest line moves to second 0–3. No intros, no “hey guys”, no dead air. If a second doesn't earn the next one, it's cut.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Built for muted viewing</h3><p>Word-by-word captions in your colours, readable with the sound off — because most Shorts are first watched on silent.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Reframed, not letterboxed</h3><p>Face-tracked 9:16 framing at 1080×1920. No black bars, no cut-off faces, speaker centred when they move.</p></div></div>
+    <div class="card"><div class="card-body"><h3>Watched before delivery</h3><p>Every clip is watched end-to-end before it reaches you — captions, sync and audio checked. Nothing ships unviewed.</p></div></div>
+    <div class="card"><div class="card-body"><h3>48 hours, one revision</h3><p>Standard delivery in 48 hours, rush available, and one revision round per clip included in every package.</p></div></div>
+    <div class="card"><div class="card-body"><h3>You own everything</h3><p>The clips are edits of your content, for your channels. I don't repost them anywhere. No retainer, no lock-in.</p></div></div>
   </div>
 </div></section>
 
@@ -276,12 +397,12 @@ footer a{color:var(--text)}
 
 <section id="book" style="padding-top:0"><div class="wrap">
   <div class="cta-band">
-    <h2>Your next 10 posts are already recorded.</h2>
-    <p>They're sitting inside your long videos. Send me one link and get a finished clip back in 48 hours.</p>
+    <h2>Let's work together.</h2>
+    <p>Your next 10 posts are already recorded. Send me one link and get a finished clip back in 48 hours.</p>
     <a class="btn" href="#brief">Book 1 clip — $10</a>
   </div>
   <div style="max-width:640px;margin:48px auto 0">
-    <p class="kicker" id="brief">Book clips</p>
+    <p class="kicker" id="brief">Hire me</p>
     <h2>Send a 60-second brief</h2>
     <p class="lead">Fill this in and hit “Open in email” — it creates a ready-to-send message. No account, no payment yet. I reply with a confirmed quote and start date.</p>
     <form id="briefForm">
@@ -319,11 +440,26 @@ footer a{color:var(--text)}
 
 <footer><div class="wrap">
   <p><strong style="color:var(--text)">Wanye Clips</strong> — Shu Wanye · Short-form clipping for creators worldwide.</p>
-  <p style="margin-top:6px">Vertical-first · Global audience · <a href="mailto:rajayt01@gmail.com">rajayt01@gmail.com</a></p>
-  <p style="margin-top:6px">© 2026 Shu Wanye</p>
+  <div class="socials">
+    <a href="mailto:rajayt01@gmail.com">✉ rajayt01@gmail.com</a>
+    <a href="https://youtube.com/@zunixaura" target="_blank" rel="noopener">▶ YouTube — @zunixaura</a>
+    <a href="https://instagram.com/shu.vyn" target="_blank" rel="noopener">◎ Instagram — @shu.vyn</a>
+  </div>
+  <p>Vertical-first · Global audience · © 2026 Shu Wanye</p>
 </div></footer>
 
 <script>
+// Gallery filter
+document.querySelectorAll('#filters .filter').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('#filters .filter').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var f=btn.dataset.filter;
+    document.querySelectorAll('#gallery .card').forEach(function(card){
+      card.style.display=(f==='all'||card.dataset.cat===f)?'':'none';
+    });
+  });
+});
 // Estimator: exact package prices at 1/5/10, $9/clip otherwise (rush not included)
 const slider=document.getElementById('clips'),countEl=document.getElementById('clipCount'),
 totalEl=document.getElementById('estTotal'),perEl=document.getElementById('estPer');
