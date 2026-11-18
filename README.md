@@ -1,8 +1,8 @@
-# Wanye Clips — Short-Form Clipping for Creators
+# Wayne.clips — Short-Form Clipping for Creators
 
 Long videos in. Scroll-stopping Shorts out.
 
-Shu Wanye turns podcasts, streams, talks and long YouTube videos into vertical
+Shu Wayne turns podcasts, streams, talks and long YouTube videos into vertical
 clips built for TikTok, Reels and Shorts — hooked in the first 3 seconds,
 captioned, and ready to post.
 
@@ -19,5 +19,5 @@ captioned, and ready to post.
 
 ## Contact
 
-Shu Wanye — rajayt01@gmail.com
+Shu Wayne — rajayt01@gmail.com
 Available to creators in the US, UK, Canada, Australia & Europe.
