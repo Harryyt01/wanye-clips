@@ -13,8 +13,8 @@ import * as THREE from 'three';
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var isMobile = window.matchMedia('(max-width: 760px), (pointer: coarse)').matches;
 
-    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.75));
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 1.75));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.05;
 
@@ -136,7 +136,10 @@ import * as THREE from 'three';
     });
 
     /* ---------- CPU particles: ~1,200, spring-home + pointer-repel + click-burst ---------- */
-    var COUNT = isMobile ? 600 : 1200;
+    /* Mobile render budget (19 Nov 2026 — scroll fix): the orbit is a decorative
+       background, so on phones it runs cheap — fewer particles, no MSAA, DPR 1 —
+       so the main thread stays free and touch scrolling stays instant. */
+    var COUNT = isMobile ? 300 : 1200;
     var pos = new Float32Array(COUNT * 3);
     var home = new Float32Array(COUNT * 3);
     var vel = new Float32Array(COUNT * 3);

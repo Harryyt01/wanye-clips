@@ -15,7 +15,13 @@
   var lenis = null;
   try {
     if (typeof Lenis !== 'undefined' && !reduced) {
-      lenis = new Lenis({ syncTouch: true });
+      /* syncTouch MUST stay false: with it on, Lenis hijacks touch scrolling and
+         routes every swipe through the rAF-driven smoothed scroll. On a phone
+         the 3D hero keeps the main thread busy, so swipes felt dead — the page
+         barely moved. With native touch scrolling, swipes stay instant even
+         when a frame is slow; Lenis still tracks native scroll for
+         ScrollTrigger, and anchor links still use lenis.scrollTo. */
+      lenis = new Lenis({ syncTouch: false });
       window.__v5Lenis = lenis;
       if (typeof gsap !== 'undefined') {
         lenis.on('scroll', function () { if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update(); });
